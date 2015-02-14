@@ -51,14 +51,6 @@ default['consul']['retry_on_join'] = false
 default['consul']['bootstrap_expect'] = 3
 default['consul']['data_dir'] = '/var/lib/consul'
 default['consul']['config_dir'] = '/etc/consul.d'
-case node['platform_family']
-when 'debian'
-  default['consul']['etc_config_dir'] = '/etc/default/consul'
-when 'rhel'
-  default['consul']['etc_config_dir'] = '/etc/sysconfig/consul'
-else
-  default['consul']['etc_config_dir'] = '/etc/sysconfig/consul'
-end
 
 default['consul']['servers'] = []
 default['consul']['init_style'] = 'init'   # 'init', 'runit', 'systemd'
@@ -71,6 +63,9 @@ else
   default['consul']['service_user'] = 'root'
   default['consul']['service_group'] = 'root'
 end
+
+default['consul']['run_user'] = 'consul'
+default['consul']['run_group'] = 'consul'
 
 default['consul']['ports'] = {
   'dns'      => 8600,
