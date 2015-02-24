@@ -55,8 +55,8 @@ else
   default['consul']['service_group'] = 'root'
 end
 
-default['consul']['run_user'] = 'consul'
-default['consul']['run_group'] = 'consul'
+default['consul']['service_user'] = 'consul'
+default['consul']['service_group'] = 'consul'
 
 default['consul']['ports'] = {
   'dns'      => 8600,
