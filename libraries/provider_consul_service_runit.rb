@@ -4,6 +4,7 @@
 #
 # Copyright 2014, 2015 Bloomberg Finance L.P.
 #
+require_relative 'helpers_runit'
 
 class Chef::Provider::ConsulServiceSystemd < Chef::Provider::ConsulService
   include ConsulCookbook::Helpers::Runit

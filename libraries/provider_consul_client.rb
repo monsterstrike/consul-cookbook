@@ -7,9 +7,9 @@
 require_relative 'helpers'
 
 class Chef::Provider::ConsulClient < Chef::Provider::LWRPBase
-  include ConsulCookbook::Helpers
-
   use_inline_resources if defined?(use_inline_resources)
+
+  include ConsulCookbook::Helpers
 
   def whyrun_supported?
     true
